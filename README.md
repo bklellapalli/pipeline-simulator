@@ -1,7 +1,7 @@
 # pipeline-simulator
 Implement a cycle-by-cycle simulator for the simple 5-stage instruction pipeline. Assume that the code to be simulated is stored in a text file with one ascii string representing an instruction (in the symbolic form, such as ADD R1, R4, R6) in each line of the file. 
 
-# The instructions supported are:
+# The instructions
 1. Register-to-register instructions: ADD, SUB, MOVC, MUL, AND, OR, EX-OR (all done on the ALU in a single cycle). You can assume that the result of multiplying two registers will fi into a single register.
 2. Memory instructions: LOAD, STORE
 3. Control flow instructions: BZ, BNZ, JUMP, BAL, HALT
@@ -26,21 +26,21 @@ Simulates the number of cycles specified as <n> and waits. Simulation can stop e
 # Display
 Displays the contents of each stage in the pipeline and the contents of the first 100 memory locations containing data, starting with address 0.
 
-# CLARIFICATIONS TO PART 1:
+# CLARIFICATIONS TO PART 1
 1. This is the in-order APEX pipeline with 5 stages.
 2. Instructions following a branch instruction in the pipeline should be flushed on a taken branch.
 3. Forwarding is not used in this version.
 4. Any one of the following languages can be used to implement BOTH parts: C, C++ or Java.
 5. Must implement in-order execution correctly.
 
-# Function units are present:
+# Function units
 1. INT (implements integer and logical instructions) - one stage, single cycle latency.
 2. MUL (implements the MUL operation, non-pipelined, latency 4 cycles,).
 3. Memory (implements LOAD and STORE instruction, 3 pipeline stages with a single cycle latency per stage.)
 
 The issue queue has 8 entries, the LSQ has 4 entries and the ROB has 16 entries. The physical register file has 16 registers. You can assume that a tag based forwarding mechanism is used.
 
-# CLARIFICATIONS for PART 2:
+# CLARIFICATIONS for PART 2
 1. Must implement forwarding to IQ entries as well as to instructions in the decode/rename stages.
 2. Must implement tag-based forwarding and register renaming.
 3. You can assume cache hits. The cache does not need to be modeled.
